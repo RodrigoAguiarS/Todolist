@@ -6,4 +6,6 @@
     <string name="hora">Hora</string>
     <string name="criar_tarefa">Criar Tarefa</string>
     <string name="cancelar">Cancelar</string>
+    <string name="nova_tafera">Nova Tafera</string>
+    <string name="passear_com_o_cachorro">Passear com o Cachorro</string>
 </resources>
