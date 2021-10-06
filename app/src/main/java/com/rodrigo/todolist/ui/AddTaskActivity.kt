@@ -1,5 +1,6 @@
 package com.rodrigo.todolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import com.rodrigo.todolist.databinding.ActivityAddTaskBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.google.android.material.timepicker.TimeFormat.CLOCK_12H
 import com.google.android.material.timepicker.TimeFormat.CLOCK_24H
 import com.rodrigo.todolist.datasource.TaskDataSource
 import com.rodrigo.todolist.extensions.format
@@ -24,7 +26,6 @@ class AddTaskActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         insertListeners()
-
     }
     private fun insertListeners() {
         binding.txtDate.editText?.setOnClickListener {
@@ -38,7 +39,7 @@ class AddTaskActivity : AppCompatActivity() {
         }
         binding.txtTime.editText?.setOnClickListener {
             val timePicker = MaterialTimePicker.Builder()
-                .setTimeFormat(CLOCK_24H)
+                .setTimeFormat(CLOCK_12H)
                 .build()
             timePicker.addOnPositiveButtonClickListener {
                val minute = if (timePicker.minute in 0..9) "0${timePicker.minute}" else timePicker.minute
@@ -57,8 +58,8 @@ class AddTaskActivity : AppCompatActivity() {
                 hour = binding.txtTime.text
             )
             TaskDataSource.insertTask(task)
+            setResult(Activity.RESULT_OK)
             finish()
-            //Log.e("TAG","insertListeners: " + TaskDataSource.getList())
         }
     }
 }
