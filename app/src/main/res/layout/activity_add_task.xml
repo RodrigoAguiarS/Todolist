@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:focusable="false"
-            android:inputType="none" />
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
     
     
@@ -97,12 +97,5 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintBottom_toTopOf="@id/btnTarefa"
         android:text="@string/cancelar"
-        android:textAllCaps="false"
-
-
-        />
-
-
-
-
+        android:textAllCaps="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

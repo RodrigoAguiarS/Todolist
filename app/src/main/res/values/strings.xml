@@ -9,4 +9,5 @@
     <string name="nova_tafera">Nova Tafera</string>
     <string name="passear_com_o_cachorro">Passear com o Cachorro</string>
     <string name="editar">Editar</string>
+    <string name="ops_voc_n_o_tem_nenhuma_tarefa">Ops! você não possui\n nenhuma tarefa</string>
 </resources>
